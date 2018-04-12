@@ -1,53 +1,53 @@
-host: all
-become: yes
+- host: all
+  become: yes
 
-tasks:
+  tasks:
 
-  - name: Delete default user
-    user:
-      name: alarm
-      state: absent
-
-
-  - name: set hostname
-    hostname:
-      name: "{{ hostname }}"
+    - name: Delete default user
+      user:
+        name: alarm
+        state: absent
 
 
-  - name: set timezone
-    timezone:
-      name: "{{ timezone }}"
+    - name: set hostname
+      hostname:
+        name: "{{ hostname }}"
 
 
-  - name: full system upgrade
-    pacman:
-      update_cache: yes
-      upgrade: yes
+    - name: set timezone
+      timezone:
+        name: "{{ timezone }}"
 
 
-  - name: install packages
-    with_items: "{{ packages }}"
-    pacman:
-      name: "{{ item }}"
-      state: present
+    - name: full system upgrade
+      pacman:
+        update_cache: yes
+        upgrade: yes
 
 
-  - name: copy system files
-    with_dict: "{{ system_files }}"
-    copy:
-      src: "files/{{ item.key }}"
-      dest: "{{ item.value.dest }}"
-      owner: "{{ item.value.owner }}"
-      group: "{{ item.value.group }}"
-      mode: "{{ item.value.mode }}"
+    - name: install packages
+      with_items: "{{ packages }}"
+      pacman:
+        name: "{{ item }}"
+        state: present
 
 
-  - name: create users(s)
-    with_items: "{{ users }}"
-    user:
-      name: "{{ tiem }}"
-      groups:
-        - audio
-        - docker
-        - video
-        - wheel
+    - name: copy system files
+      with_dict: "{{ system_files }}"
+      copy:
+        src: "files/{{ item.key }}"
+        dest: "{{ item.value.dest }}"
+        owner: "{{ item.value.owner }}"
+        group: "{{ item.value.group }}"
+        mode: "{{ item.value.mode }}"
+
+
+    - name: create users(s)
+      with_items: "{{ users }}"
+      user:
+        name: "{{ tiem.key }}"
+        groups:
+          - audio
+          - docker
+          - video
+          - wheel
