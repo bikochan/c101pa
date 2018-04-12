@@ -1,9 +1,9 @@
 #!/bin/bash
 set -x -e -o pipefail
 
-pkgs="git ansible tmux"
+pkgs="git ansible"
 pacman -Syu --color=auto
-pacman -S ${pkgs}
+pacman -S --color=auto ${pkgs}
 
 git clone https://bitbucket.org/bikochan/c101pa.git
 cd c101pa
