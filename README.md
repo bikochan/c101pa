@@ -16,6 +16,7 @@ Basic config includes:
 
 Some ideas:
 
+- TEST!
 - encrypt secrets using vault
 - reduce prompts and other interceptions (automated downloads etc)
 - custom disk partitioning
@@ -32,8 +33,9 @@ to enable devloper mode and boot from external storage.
 
 - Download the arch-setup.sh script and execute as root
 ```
-cd /tmp && curl https://bitbucket.org/bikochan/c101pa/downloads/arch-linux.sh -O
-sudo arch-linux.sh
+cd /tmp && curl https://bitbucket.org/bikochan/c101pa/downloads/install.sh -O
+chmod +x install.sh
+./install.sh
 ```
 
 
@@ -48,10 +50,9 @@ sudo arch-linux.sh
 wifi-menu
 ```
 
-- Download the bootstrap.sh script and execute as root
+- Execute the `setup.sh` script as root
 ```
-cd /tmp && curl https://bitbucket.org/bikochan/c101pa/downloads/bootstrap.sh -O
-sudo bootstrap.sh
+./setup.sh
 ```
 
 - Edit the `all` YAML file to customise the system a bit
