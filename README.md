@@ -7,6 +7,7 @@ After formating the external microSD card to use all available space (all data w
 this will install git + ansible so it can run a playbook to setup the system.
 
 Basic config includes:
+
 - hostname/timezone
 - sudo user(s) w/o password!
 - some usefull packages: openssh-client, alsa-utils etc
@@ -14,6 +15,7 @@ Basic config includes:
 ## TODO
 
 Some ideas:
+
 - encrypt secrets using vault
 - reduce prompts and other interceptions (automated downloads etc)
 - custom disk partitioning
