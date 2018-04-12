@@ -32,7 +32,7 @@ to enable devloper mode and boot from external storage.
 
 - Download the arch-setup.sh script and execute as root
 ```
-cd /tmp && curl http://www.bikochan.net/c101pa/arch-linux.sh -O
+cd /tmp && curl https://bitbucket.org/bikochan/c101pa/downloads/arch-linux.sh -O
 sudo arch-linux.sh
 ```
 
@@ -50,7 +50,7 @@ wifi-menu
 
 - Download the bootstrap.sh script and execute as root
 ```
-cd /tmp && curl http://www.bikochan.net/c101pa/bootstrap.sh -O
+cd /tmp && curl https://bitbucket.org/bikochan/c101pa/downloads/bootstrap.sh -O
 sudo bootstrap.sh
 ```
 
