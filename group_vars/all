@@ -1,0 +1,24 @@
+hostname: c101pa
+
+timezone: "Europe/London"
+
+systemfiles:
+  profile:
+    dest: /etc/skel/profile
+    mode: 0644
+    owner: root
+    group: root
+
+packages:
+    - git
+    - ansible
+    - tmux
+    - htop
+    - docker
+    - sudo
+    - openssh-client
+    - also-utils
+
+users:
+    drizzt:
+      password: "popo1234"
