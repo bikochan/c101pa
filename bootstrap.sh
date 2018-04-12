@@ -5,7 +5,7 @@ pkgs="git ansible tmux"
 pacman -Syu --color=auto
 pacman -S ${pkgs}
 
-git clone c101pa
+git clone https://bitbucket.org/bikochan/c101pa.git
 cd c101pa
 
 cat <<EOT
