@@ -25,6 +25,6 @@ chmod +x setup.sh
 mv setup.sh rootfs/root/setup.sh
 
 
-dd if=root/boot/vmlinux.kpart of=/dev/mmcblk1p1
+dd if=rootfs/boot/vmlinux.kpart of=/dev/mmcblk1p1
 sync
 umount rootfs
