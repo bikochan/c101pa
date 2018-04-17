@@ -33,9 +33,8 @@ to enable devloper mode and boot from external storage.
 
 - Download the arch-setup.sh script and execute as root
 ```
-cd /tmp && curl https://bitbucket.org/bikochan/c101pa/downloads/install.sh -O
-chmod +x install.sh
-./install.sh
+cd /tmp && curl https://bitbucket.org/bikochan/c101pa/downloads/install.sh -O -L
+bash install.sh
 ```
 
 
