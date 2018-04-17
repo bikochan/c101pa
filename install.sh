@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x -e -o pipefail
+set -x -o pipefail
 
 umount /dev/mmcblk1*
 cat <<EOP | fdisk /dev/mmcblk1
