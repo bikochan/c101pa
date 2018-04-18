@@ -10,14 +10,14 @@ systemfiles:
     group: root
 
 packages:
-    - git
+    - alsa-utils
     - ansible
-    - tmux
-    - htop
     - docker
-    - sudo
+    - git
+    - htop
     - openssh-client
-    - also-utils
+    - sudo
+    - tmux
 
 users:
     drizzt:
