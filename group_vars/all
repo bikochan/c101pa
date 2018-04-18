@@ -15,7 +15,7 @@ packages:
     - docker
     - git
     - htop
-    - openssh-client
+    - openssh
     - sudo
     - tmux
 
