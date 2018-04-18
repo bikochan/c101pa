@@ -1,5 +1,7 @@
 - hosts: all
   become: yes
+  # Don't gather facts as the setup module fails on archlinux/c101pa
+  gather_facts: false
 
   tasks:
 
