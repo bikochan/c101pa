@@ -1,0 +1,21 @@
+# Shell shortcuts
+alias ipsort='sort -n -k4 -t.'
+alias ll='ls -la'
+alias ls='ls -GF'
+alias vh='sudo vi /etc/hosts'
+alias sshp='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no '
+
+# json to string converter for aws cli
+alias j2s="tr -d '\n' | sed -e \"s/^/'/;s/$/'/\""
+
+# history
+alias h+="set +o history"
+alias h-="set -o histroy"
+
+# Hashicorp
+alias tf=terraform
+alias vg=vagrant
+
+# Kubernetes
+alias kc=kubectl
+

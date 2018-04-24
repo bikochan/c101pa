@@ -45,9 +45,10 @@
 
 
     - name: create users(s)
-      with_items: "{{ users }}"
+      with_dict: "{{ users }}"
       user:
-        name: "{{ tiem.key }}"
+        name: "{{ item.key }}"
+        password: "{{ item.value.password }}"
         groups:
           - audio
           - docker
