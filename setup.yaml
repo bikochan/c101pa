@@ -34,14 +34,31 @@
         state: present
 
 
-    - name: copy system files
-      with_dict: "{{ system_files }}"
+    - name: copy skel files
       copy:
-        src: "files/{{ item.key }}"
-        dest: "{{ item.value.dest }}"
-        owner: "{{ item.value.owner }}"
-        group: "{{ item.value.group }}"
-        mode: "{{ item.value.mode }}"
+        src: "files/skel"
+        dest: "/etc/skel"
+        owner: root
+        group: root
+        mode: 0755
+
+
+    - name: setup sudoers
+      copy:
+        src: "files/sudoers"
+        dest: "/etc/sudoers"
+        owner: root
+        group: root
+        mode: 0440
+
+
+    - name: reconfigure ntp
+      copy:
+        src: "files/ntp.conf"
+        dest: "/etc/ntp.conf"
+        owner: root
+        group: root
+        mode: 0644
 
 
     - name: create users(s)

@@ -17,11 +17,9 @@ Basic config includes:
 Some ideas:
 
 - TEST!
-- encrypt secrets using vault
 - reduce prompts and other interceptions (automated downloads etc)
 - custom disk partitioning
 - home/full disk encryption (can it handle it?)
-- set users' passwords
 - change root password
 - install/configure X and WM
 
@@ -58,6 +56,6 @@ wifi-menu
 
 - Run ansible playbook
 ```
-ansible-playbook -v setup.yaml
+ansible-playbook -v setup.yaml --vault-id <vault-id-file>
 ```
 

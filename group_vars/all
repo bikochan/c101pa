@@ -1,24 +1,22 @@
 hostname: c101pa
 timezone: "Europe/London"
 
-system_files:
-  profile:
-    dest: /etc/skel/profile
-    mode: 0644
-    owner: root
-    group: root
-
-
 packages:
     - alsa-utils
     - ansible
     - atome
+    - awesome
     - docker
+    - firefox
     - git
     - htop
+    - ntp
     - openssh
     - sudo
     - tmux
+    - xorg-xinit
+    - xserver-xorg
+    - xterm
 
 
 users:
