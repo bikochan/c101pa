@@ -4,7 +4,7 @@ timezone: "Europe/London"
 packages:
     - alsa-utils
     - ansible
-    - atome
+    - atom
     - awesome
     - docker
     - firefox
@@ -14,8 +14,8 @@ packages:
     - openssh
     - sudo
     - tmux
+    - xorg
     - xorg-xinit
-    - xserver-xorg
     - xterm
 
 
