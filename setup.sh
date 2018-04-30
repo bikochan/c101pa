@@ -5,6 +5,7 @@ pkgs="git ansible"
 pacman -Syu --color=auto --noconfirm
 pacman -S --color=auto --noconfirm ${pkgs}
 
+# TODO: add a test for vagrant box not to download code
 git clone https://bitbucket.org/bikochan/c101pa.git
 
 cat <<EOT
