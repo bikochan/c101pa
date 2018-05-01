@@ -61,6 +61,19 @@
         mode: 0644
 
 
+    - name: configure backlight rules
+      copy:
+        src: "files/backlight.rules"
+        dest: "/etc/udev/rules.d/backlight.rules"
+        owner: root
+        group: root
+        mode: 0444
+
+
+    - name: configure locale
+      command: localectl set-x11-keymap gb chromebook
+
+      
     - name: create users(s)
       with_dict: "{{ users }}"
       user:
