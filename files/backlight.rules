@@ -1,0 +1,1 @@
+SUBSYSTEM=="backlight",RUN+="/usr/bin/chgrp video /sys/class/backlight/%k/brightness /sys/class/backlight/%k/bl_power",RUN+="/usr/bin/chmod 664 /sys/class/backlight/%k/brightness /sys/class/backlight/%k/bl_power"
