@@ -22,7 +22,7 @@
 
 
     - name: full system upgrade
-      when: no-upgrade is undefined
+      when: no_upgrade is undefined
       pacman:
         update_cache: yes
         upgrade: yes
