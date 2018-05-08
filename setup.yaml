@@ -36,8 +36,8 @@
 
     - name: copy skel files
       copy:
-        src: "files/skel"
-        dest: "/etc/skel"
+        src: "files/skel/"
+        dest: "/etc/skel/"
         owner: root
         group: root
         mode: 0755
@@ -73,7 +73,7 @@
     - name: configure locale
       command: localectl set-x11-keymap gb chromebook
 
-      
+>>>>>>> 65eeb363f748e73d71c268f4ed50a0f4652e0dbb
     - name: create users(s)
       with_dict: "{{ users }}"
       user:
