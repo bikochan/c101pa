@@ -1,0 +1,62 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "disk /"
+order += "wireless _first_"
+order += "battery 0"
+order += "load"
+order += "cpu_temperature 0"
+order += "volume master"
+order += "tztime local"
+
+cpu_temperature 0 {
+	format = "T: %degreesC"
+}
+
+wireless _first_ {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+        path = "/sys/class/power_supply/sbs-9-000b/uevent"
+        status_chr = "CHR"
+        status_bat = "BAT"
+        status_unk = "UNK"
+        status_full = "FULL"
+        low_threshold = 10 
+	threshold_type = "time"
+	integer_battery_capacity = true
+	hide_seconds = true
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M"
+}
+
+load {
+        format = "L: %1min, %5min, %15min"
+}
+
+disk "/" {
+        format = "/: %avail"
+}
+
+volume master {
+	format = "V: %volume"
+	format_muted = ": muted (%volume)"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}

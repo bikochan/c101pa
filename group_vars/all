@@ -4,7 +4,6 @@ timezone: "Europe/London"
 packages:
     - alsa-utils
     - ansible
-    - awesome
     - docker
     - firefox
     - git
@@ -16,6 +15,19 @@ packages:
     - xorg
     - xorg-xinit
     - xterm
+    - i3-gaps
+    - i3blocks
+    - i3lock
+    - i3status
+    - dmenu
+    - acpi
+    - bc
+    - urxvt
+    - python-pip
+    - zsh
+    - make
+    - vim
+
 
 
 users:
