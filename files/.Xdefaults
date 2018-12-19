@@ -1,0 +1,3 @@
+URxvt.font: xft:Terminus:pixelsize=10
+URxvt.scrollBar_right: true
+
