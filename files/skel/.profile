@@ -15,3 +15,8 @@ source ${HOME}/bin/bash_prompt.sh
 # functions
 function err() { printf "\e[31m${@}\e[0m" ; }
 function ok()  { printf "\e[32m${@}\e[0m" ; }
+
+
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
