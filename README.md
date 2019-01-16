@@ -59,4 +59,15 @@ wifi-menu
 ansible-playbook -v setup.yaml --vault-id <vault-id-file>
 ```
 
+## Building vscode
 
+```
+pacman -S nodejs npm libsecret python2 gcc make yarn native-keymap
+mkdir ~/.npm-global
+echo '{}' > package.json
+
+git clone https://github.com/Microsoft/vscode.git
+cd vscode
+yarn
+yarn run watch
+```
