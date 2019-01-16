@@ -20,3 +20,4 @@ function ok()  { printf "\e[32m${@}\e[0m" ; }
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
+0
