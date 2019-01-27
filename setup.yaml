@@ -4,22 +4,18 @@
   gather_facts: false
 
   tasks:
-
     - name: Delete default user
       user:
         name: alarm
         state: absent
 
-
     - name: set hostname
       hostname:
         name: "{{ hostname }}"
 
-
     - name: set timezone
       timezone:
         name: "{{ timezone }}"
-
 
     - name: full system upgrade
       when: no_upgrade is undefined
@@ -27,22 +23,10 @@
         update_cache: yes
         upgrade: yes
 
-
     - name: install packages
-      with_items: "{{ packages }}"
       pacman:
-        name: "{{ item }}"
+        name: "{{ packages }}"
         state: present
-
-
-    - name: copy skel files
-      copy:
-        src: "files/skel/"
-        dest: "/etc/skel/"
-        owner: root
-        group: root
-        mode: 0755
-
 
     - name: setup sudoers
       copy:
@@ -52,7 +36,6 @@
         group: root
         mode: 0440
 
-
     - name: reconfigure ntp
       copy:
         src: "files/ntp.conf"
@@ -60,7 +43,6 @@
         owner: root
         group: root
         mode: 0644
-
 
     - name: configure backlight rules
       copy:
@@ -70,10 +52,17 @@
         group: root
         mode: 0444
 
-
     - name: configure locale
       command: localectl set-x11-keymap gb chromebook
 
+    - name:
+    - name: copy skel files
+      copy:
+        src: "files/skel/"
+        dest: "/etc/skel/"
+        owner: root
+        group: root
+        mode: 0755
 
     - name: create users(s)
       with_dict: "{{ users }}"
