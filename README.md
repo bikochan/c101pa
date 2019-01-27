@@ -31,7 +31,10 @@ to enable devloper mode and boot from external storage.
 
 - Download the arch-setup.sh script and execute as root
 ```
-cd /tmp && curl https://bitbucket.org/bikochan/c101pa/downloads/install.sh -O -L
+cd /tmp
+curl -OL https://bit.ly/2B7hC6F
+# aka the long URL below
+# curl -OL https://raw.githubusercontent.com/bikochan/c101pa/master/install.sh
 bash install.sh
 ```
 
@@ -40,7 +43,9 @@ bash install.sh
 
 - Reboot into Arch linux but pressing ctrl-u at the splash screen
 
-- login as root (password: root)
+- login as root using the default password: root)
+
+- Change root password
 
 - Start wifi
 ```
@@ -56,7 +61,7 @@ wifi-menu
 
 - Run ansible playbook
 ```
-ansible-playbook -v setup.yaml --vault-id <vault-id-file>
+ansible-playbook -v setup.yaml --vault-password-file=<vault-id-file>
 ```
 
 ## Building vscode
