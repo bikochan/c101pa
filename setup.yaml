@@ -55,7 +55,6 @@
     - name: configure locale
       command: localectl set-x11-keymap gb chromebook
 
-    - name:
     - name: copy skel files
       copy:
         src: "files/skel/"

@@ -16,10 +16,13 @@ cd c101pa
 if [[ ! -f $vaultfile ]]; then
     echo "Ansible's vault password file not found"
     echo "Enter passphrase now to be saved in $vaultfile"
+    read vault
+    echo -n $vault > $vaultflie
+fi
 
 cat <<EOT
 If you want to customise, press ctrl-C now then
-edit values in the file named `group_vars/all`
+edit values in the file named 'group_vars/all'
 to resume, run: $cmd
 
 otherwise simply pres ENTER to continue with the default values.
