@@ -20,7 +20,7 @@ mkdir rootfs
 mount /dev/mmcblk1p2 rootfs
 tar -xf ArchLinuxARM-gru-latest.tar.gz -C rootfs
 
-curl -LO https://bitbucket.org/bikochan/c101pa/downloads/setup.sh
+curl -LO https://raw.githubusercontent.com/bikochan/c101pa/master/setup.sh
 chmod +x setup.sh
 mv setup.sh rootfs/root/setup.sh
 
