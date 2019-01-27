@@ -1,18 +1,28 @@
 #!/bin/bash
 set -x -e -o pipefail
 
+
+vaultfile=.vault
+cmd="ansible-playbook -v --vault-password-file=$vaultfile setup.yaml"
 pkgs="git ansible"
+
+pacman-key --init
+pacman-key --populate archlinuxarm
 pacman -Syu --color=auto --noconfirm
 pacman -S --color=auto --noconfirm ${pkgs}
 
-# TODO: add a test for vagrant box not to download code
-git clone https://bitbucket.org/bikochan/c101pa.git
+git clone https://github.com/bikochan/c101pa.git
+cd c101pa
+if [[ ! -f $vaultfile ]]; then
+    echo "Ansible's vault password file not found"
+    echo "Enter passphrase now to be saved in $vaultfile"
 
 cat <<EOT
-Edit values in the file named `all` to customise your system
-then run:
+If you want to customise, press ctrl-C now then
+edit values in the file named `group_vars/all`
+to resume, run: $cmd
 
-   cd c101pa
-   ansible-playbook -v setup.yaml
-
+otherwise simply pres ENTER to continue with the default values.
 EOT
+read WAIT
+$cmd
