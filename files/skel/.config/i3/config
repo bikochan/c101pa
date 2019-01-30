@@ -30,7 +30,8 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -168,3 +169,16 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Media keys
+#bindsym XF86Back
+#bindsym XF86Forward
+#bindsym XF86Reload
+#bindsym XF86F11
+#bindsym XF86F5
+#bindsym XF86MonBrightnessDown exec "/home/drizzt/bin/brightness decr"
+#ibindsym XF86MonBrightnessUp exec "/home/drizzt/bin/brightness incr"
+#bindsym XF86AudioMute
+#bindsym XF86AudioLowerVolume
+#bindsym XF86AudioRaiseVolume
+bindsym $mod+XF86Tools exec "/usr/bin/i3lock -eu"

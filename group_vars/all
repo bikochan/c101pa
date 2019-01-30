@@ -2,6 +2,7 @@ hostname: c101pa
 timezone: "Europe/London"
 
 packages:
+    - base-devel
     - acpi
     - alsa-utils
     - ansible
