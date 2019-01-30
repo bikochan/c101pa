@@ -1,31 +1,35 @@
 #!/bin/bash
 brightness=/sys/class/backlight/backlight/brightness
 
-min=5000
-max=65000
-cur=$(cat $brightness)
+min=2000
+max=62000
+step=4000
+
+setBrightness() {
+   cur=$(cat $brightness)
+   round=$(($cur/$step*$step+$min))
+   new=$((round+$1))
+   if [[ $new -ge $min && $new -le $max ]]; then
+      echo $new > $brightness
+   fi
+}
 
 usage() {
-  echo "usage: backlight <increase|decrease>"
+  echo "usage: backlight <incr|decr>"
 }
 
-increase() {
-}
 
-decrease() {
-}
-
-if [[ $# -eq 1 ]]; then
+if [[ ! $# -eq 1 ]]; then
   usage
   exit 0
 fi
 
 case "$1" in
-   "increase")
-      increase
+   "incr")
+      setBrightness $step
       ;;
-   "decrease")
-      decrease
+   "decr")
+      setBrightness -$step
       ;;
    *)
       usage
