@@ -2,6 +2,14 @@ hostname: c101pa
 timezone: "Europe/London"
 
 packages:
+    - make
+    - go
+    - pulseaudio-alsa
+    - pulseaudio
+    - pulseaudio-bluetooth
+    - bluez
+    - pavucontrol
+    - keychain
     - base-devel
     - acpi
     - alsa-utils
